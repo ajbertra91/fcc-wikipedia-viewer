@@ -27,7 +27,7 @@ export class Search {
   }
 
   submit() {
-    return fetch(`https://en.wikipedia.org/w/api.php?action=query&origin=en.wikipedia.org&prop=extracts&format=json&titles=${this.search}`)
+    return fetch(`https://en.wikipedia.org/w/api.php?action=opensearch&prop=extracts&format=json&titles=${this.search}`)
       .then(response => response.json())
       .then(json => console.log('json --> ', json))
       .catch(ex => console.log('parsing failed --> ', ex));
