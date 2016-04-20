@@ -17,9 +17,7 @@ export class Search {
               headers: {
                 'Accept': 'application/javascript',
                 'Content-Type': 'application/x-www-form-urlencoded',
-                'X-Requested-With': 'Fetch',
-                'dataType': 'jsonp',
-                'origin': 'en.wikipedia.org'
+                'X-Requested-With': 'Fetch'
             }
         });
         // .withBaseUrl(`https://en.wikipedia.org/w/api.php?`);
@@ -29,7 +27,7 @@ export class Search {
   }
 
   submit() {
-    return fetch(`https://commons.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&titles=${this.search}`)
+    return fetchJsonp(`https://en.wikipedia.org/w/api.php?action=query&origin=en.wikipedia.org&prop=extracts&format=json&titles=${this.search}`)
       .then(response => response.json())
       .then(json => console.log('json: ', json))
       .catch(ex => console.log('parsing failed', ex));
