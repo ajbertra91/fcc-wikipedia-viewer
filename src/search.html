@@ -1,0 +1,21 @@
+<template>
+  <section>
+    <h2>${heading}</h2>
+    <form submit.trigger="submit()">
+      <div>
+        <label>Search</label>
+        <input type="text" value.bind="search" placeholder="Search">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  <section>
+    <h3>Results</h3>
+    <ul>
+      <li>
+        <div class="title">Title</div>
+        <div class="description">This is a description.</div>
+      </li>
+    </ul>
+  </section>
+</template>
